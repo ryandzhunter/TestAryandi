@@ -9,5 +9,6 @@
     <string name="password_hint">Password</string>
     <string name="login">Login</string>
     <string name="welcome">Welcome</string>
+    <string name="get_started">To get started, log in using Facebook</string>
 
 </resources>

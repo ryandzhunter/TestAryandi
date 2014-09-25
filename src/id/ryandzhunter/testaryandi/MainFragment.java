@@ -1,5 +1,7 @@
 package id.ryandzhunter.testaryandi;
 
+import java.util.Arrays;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,10 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
-import com.facebook.Session;
-import id.ryandzhunter.testaryandi.R;
+import com.facebook.widget.LoginButton;
 
 public class MainFragment extends Fragment {
 
@@ -21,8 +23,11 @@ public class MainFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.activity_main, container, false);
+		View view = inflater.inflate(R.layout.activity_login, container, false);
 
+		LoginButton loginButton = (LoginButton) view.findViewById(R.id.login_button);
+		loginButton.setFragment(this);
+		loginButton.setReadPermissions(Arrays.asList("user_likes", "user_status"));
 		return view;
 	}
 
