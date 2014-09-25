@@ -21,4 +21,4 @@ poin 4: user dapat share text/text dan link tanpa menggunakan share dialog Faceb
 
 Log
 ===
-1. Berhasil melakukan koneksi ke facebook dan memunculkan pesan welcome,(user)
+1. Berhasil melakukan koneksi ke facebook
