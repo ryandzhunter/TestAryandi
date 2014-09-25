@@ -1,3 +1,3 @@
 TestAryandi
 ===========
-Soal tes prakterk 7LANGIT
+Soal tes praktek 7LANGIT
