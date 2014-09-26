@@ -51,6 +51,9 @@ public class MainActivity extends Activity {
 										TextView birthday = (TextView) findViewById(R.id.labelBirthday);
 										birthday.setText(user.getBirthday());
 										TextView location = (TextView) findViewById(R.id.labelLocation);
+										location.setText(user.asMap().get("location").toString());
+										TextView gender = (TextView) findViewById(R.id.labelGender);
+										gender.setText(user.asMap().get("gender").toString());
 										//location.setText(user.getLocation().toString());
 										
 									}
