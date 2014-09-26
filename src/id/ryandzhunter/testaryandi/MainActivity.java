@@ -42,6 +42,17 @@ public class MainActivity extends Activity {
 										TextView welcome = (TextView) findViewById(R.id.welcome);
 										welcome.setText("Hello "
 												+ user.getName() + "!");
+										TextView username = (TextView) findViewById(R.id.labelUsername);
+										username.setText(user.getUsername());
+										TextView firstname = (TextView) findViewById(R.id.labelFirstName);
+										firstname.setText(user.getFirstName());
+										TextView lastname = (TextView) findViewById(R.id.labelLastName);
+										lastname.setText(user.getLastName());
+										TextView birthday = (TextView) findViewById(R.id.labelBirthday);
+										birthday.setText(user.getBirthday());
+										TextView location = (TextView) findViewById(R.id.labelLocation);
+										//location.setText(user.getLocation().toString());
+										
 									}
 								}
 							}).executeAsync();

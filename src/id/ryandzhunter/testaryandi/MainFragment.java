@@ -27,7 +27,7 @@ public class MainFragment extends Fragment {
 
 		LoginButton loginButton = (LoginButton) view.findViewById(R.id.login_button);
 		loginButton.setFragment(this);
-		loginButton.setReadPermissions(Arrays.asList("user_likes", "user_status"));
+		loginButton.setReadPermissions(Arrays.asList("user_likes", "user_status", "user_location", "user_birthday", "user_likes"));
 		return view;
 	}
 
@@ -83,6 +83,9 @@ public class MainFragment extends Fragment {
 			Exception exception) {
 		if (state.isOpened()) {
 			Log.i(TAG, "Logged in...");
+			Intent in = new Intent(getActivity(),
+					MainActivity.class);
+			startActivity(in);
 		} else if (state.isClosed()) {
 			Log.i(TAG, "Logged out...");
 		}

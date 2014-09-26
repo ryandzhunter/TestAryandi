@@ -10,5 +10,11 @@
     <string name="login">Login</string>
     <string name="welcome">Welcome</string>
     <string name="get_started">To get started, log in using Facebook</string>
+    <string name="label_username">Username</string>
+    <string name="labelFirstName">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_birthday">Birthday</string>
+    <string name="label_location">Location</string>
 
 </resources>
