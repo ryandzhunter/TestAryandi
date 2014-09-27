@@ -83,4 +83,24 @@
         android:layout_marginTop="18dp"
         android:text="@string/label_location" />
 
+    <Button
+        android:id="@+id/buttonShareDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/labelLocation"
+        android:layout_marginTop="24dp"
+        android:onClick="shareDialogClick"
+        android:text="@string/button_share_with_dialog" />
+
+    <Button
+        android:id="@+id/buttonShareView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonShareDialog"
+        android:layout_marginTop="16dp"
+        android:onClick="shareViewClick"
+        android:text="@string/button_share_with_view" />
+
 </RelativeLayout>

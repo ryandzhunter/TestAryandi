@@ -3,6 +3,7 @@ package id.ryandzhunter.testaryandi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.Request;
@@ -10,7 +11,6 @@ import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
-import id.ryandzhunter.testaryandi.R;
 
 public class MainActivity extends Activity {
 
@@ -51,11 +51,11 @@ public class MainActivity extends Activity {
 										TextView birthday = (TextView) findViewById(R.id.labelBirthday);
 										birthday.setText(user.getBirthday());
 										TextView location = (TextView) findViewById(R.id.labelLocation);
-										location.setText(user.asMap().get("location").toString());
+										location.setText(user.getLocation().getProperty("name").toString());
+										//location.setText(user.asMap().get("location").toString());
 										TextView gender = (TextView) findViewById(R.id.labelGender);
 										gender.setText(user.asMap().get("gender").toString());
-										//location.setText(user.getLocation().toString());
-										
+																			
 									}
 								}
 							}).executeAsync();
@@ -69,5 +69,15 @@ public class MainActivity extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 		Session.getActiveSession().onActivityResult(this, requestCode,
 				resultCode, data);
+	}
+	
+	public void shareDialogClick(View view){
+		//Intent shareDialogIntent = new Intent(getApplicationContext(), ShareDialogActivity.class);
+		//startActivity(shareDialogIntent);	
+	}
+	
+	public void shareViewClick(View view){
+		Intent shareViewIntent = new Intent(getApplicationContext(), ShareViewActivity.class);
+		startActivity(shareViewIntent);	
 	}
 }

@@ -16,5 +16,9 @@
     <string name="label_gender">Gender</string>
     <string name="label_birthday">Birthday</string>
     <string name="label_location">Location</string>
+    <string name="button_share_with_dialog">Share with Share Dialog</string>
+    <string name="button_share_with_view">Share with Custom View</string>
+    <string name="title_activity_share_dialog">ShareDialogActivity</string>
+    <string name="title_activity_share_view">ShareViewActivity</string>
 
 </resources>
