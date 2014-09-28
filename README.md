@@ -22,3 +22,5 @@ poin 4: user dapat share text/text dan link tanpa menggunakan share dialog Faceb
 Log
 ===
 1. Berhasil melakukan koneksi ke facebook
+2. Berhasil menampilkan informasi data pengguna
+3. Berhasil melakukan update status dengan facebook dialog
