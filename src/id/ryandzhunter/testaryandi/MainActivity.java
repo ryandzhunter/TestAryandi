@@ -3,6 +3,7 @@ package id.ryandzhunter.testaryandi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
+import com.facebook.widget.FacebookDialog;
 
 public class MainActivity extends Activity {
 
@@ -72,12 +74,24 @@ public class MainActivity extends Activity {
 	}
 	
 	public void shareDialogClick(View view){
-		//Intent shareDialogIntent = new Intent(getApplicationContext(), ShareDialogActivity.class);
-		//startActivity(shareDialogIntent);	
+		Intent shareDialogIntent = new Intent(getApplicationContext(), ShareDialogActivity.class);
+		startActivity(shareDialogIntent);	
 	}
 	
 	public void shareViewClick(View view){
 		Intent shareViewIntent = new Intent(getApplicationContext(), ShareViewActivity.class);
 		startActivity(shareViewIntent);	
 	}
+	
+    private FacebookDialog.Callback dialogCallback = new FacebookDialog.Callback() {
+        @Override
+        public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
+            Log.d("HelloFacebook", String.format("Error: %s", error.toString()));
+        }
+
+        @Override
+        public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
+            Log.d("HelloFacebook", "Success!");
+        }
+    };
 }
