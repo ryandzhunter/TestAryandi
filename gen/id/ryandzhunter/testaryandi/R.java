@@ -1322,7 +1322,7 @@ containing a value of this type.
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
         public static final int dropdown=0x7f05000f;
-        public static final int editText1=0x7f05004e;
+        public static final int editStatus=0x7f05004e;
         public static final int edit_query=0x7f050032;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050028;

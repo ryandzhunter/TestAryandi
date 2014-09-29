@@ -12,6 +12,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.FacebookRequestError;
@@ -31,6 +33,7 @@ public class ShareViewActivity extends Activity {
 	private static final String PENDING_PUBLISH_KEY = "pendingPublishReauthorization";
 	private boolean pendingPublishReauthorization = false;
 	private UiLifecycleHelper uiHelper;
+	private EditText editStatus;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,9 @@ public class ShareViewActivity extends Activity {
 
 		uiHelper = new UiLifecycleHelper(this, null);
 		uiHelper.onCreate(savedInstanceState);
+		
+		editStatus = (EditText) findViewById(R.id.editStatus);
+		
 
 		if (savedInstanceState != null) {
 			pendingPublishReauthorization = savedInstanceState.getBoolean(
@@ -48,59 +54,57 @@ public class ShareViewActivity extends Activity {
 
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
-	    super.onSaveInstanceState(outState);
-	    outState.putBoolean(PENDING_PUBLISH_KEY, pendingPublishReauthorization);
-	    uiHelper.onSaveInstanceState(outState);
+		super.onSaveInstanceState(outState);
+		outState.putBoolean(PENDING_PUBLISH_KEY, pendingPublishReauthorization);
+		uiHelper.onSaveInstanceState(outState);
 	}
-	
+
 	private void onSessionStateChange(Session session, SessionState state,
 			Exception exception) {
 		if (state.isOpened()) {
 			Log.i(TAG, "Logged in...");
-			if (pendingPublishReauthorization && 
-			        state.equals(SessionState.OPENED_TOKEN_UPDATED)) {
-			    pendingPublishReauthorization = false;
-			    publishStory();
+			if (pendingPublishReauthorization
+					&& state.equals(SessionState.OPENED_TOKEN_UPDATED)) {
+				pendingPublishReauthorization = false;
+				publishStory();
 			}
 		} else if (state.isClosed()) {
 			Log.i(TAG, "Logged out...");
 		}
 	}
-	
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		uiHelper.onActivityResult(requestCode, resultCode, data);
+	}
+
 	@Override
 	public void onResume() {
-	    super.onResume();
-	    
-	    // For scenarios where the main activity is launched and user
-	    // session is not null, the session state change notification
-	    // may not be triggered. Trigger it if it's open/closed.
-	    Session session = Session.getActiveSession();
-	    if (session != null &&
-	           (session.isOpened() || session.isClosed()) ) {
-	        onSessionStateChange(session, session.getState(), null);
-	    }
+		super.onResume();
 
-	    uiHelper.onResume();
+		// For scenarios where the main activity is launched and user
+		// session is not null, the session state change notification
+		// may not be triggered. Trigger it if it's open/closed.
+		Session session = Session.getActiveSession();
+		if (session != null && (session.isOpened() || session.isClosed())) {
+			onSessionStateChange(session, session.getState(), null);
+		}
+
+		uiHelper.onResume();
 	}
-	
+
 	@Override
 	public void onPause() {
-	    super.onPause();
-	    uiHelper.onPause();
+		super.onPause();
+		uiHelper.onPause();
 	}
 
 	@Override
 	public void onDestroy() {
-	    super.onDestroy();
-	    uiHelper.onDestroy();
+		super.onDestroy();
+		uiHelper.onDestroy();
 	}
-
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    super.onActivityResult(requestCode, resultCode, data);
-	    uiHelper.onActivityResult(requestCode, resultCode, data);
-	}
-	
 
 	private void publishStory() {
 		Session session = Session.getActiveSession();
@@ -118,6 +122,8 @@ public class ShareViewActivity extends Activity {
 			}
 
 			Bundle postParams = new Bundle();
+			String textStatus = editStatus.getText().toString();
+			/*postParams.putString("message", textStatus);
 			postParams.putString("name", "Facebook SDK for Android");
 			postParams.putString("caption",
 					"Build great social apps and get more installs.");
@@ -129,7 +135,7 @@ public class ShareViewActivity extends Activity {
 					"https://developers.facebook.com/android");
 			postParams
 					.putString("picture",
-							"https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
+							"https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");*/
 
 			Request.Callback callback = new Request.Callback() {
 				public void onCompleted(Response response) {
