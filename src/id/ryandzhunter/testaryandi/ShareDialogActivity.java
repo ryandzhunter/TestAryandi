@@ -31,31 +31,23 @@ public class ShareDialogActivity extends Activity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
+	    super.onActivityResult(requestCode, resultCode, data);
 
-		uiHelper.onActivityResult(requestCode, resultCode, data,
-				new FacebookDialog.Callback() {
-			
-					@Override
-					public void onError(FacebookDialog.PendingCall pendingCall,
-							Exception error, Bundle data) {
-						Log.e("Activity",
-								String.format("Error: %s", error.toString()));
-					}
+	    uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
+	    	
+	        @Override
+	        public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
+	            Log.e("Activity", String.format("Error: %s", error.toString()));
+	        }
 
-					@Override
-					public void onComplete(
-							FacebookDialog.PendingCall pendingCall, Bundle data) {
-						Log.i("Activity", "Success!");
-						boolean didCancel = FacebookDialog
-								.getNativeDialogDidComplete(data);
-						String completionGesture = FacebookDialog
-								.getNativeDialogCompletionGesture(data);
-						String postId = FacebookDialog
-								.getNativeDialogPostId(data);
-					}
-				});
-
+	        @Override
+	        public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
+	            Log.i("Activity", "Success!");
+	            boolean didCancel = FacebookDialog.getNativeDialogDidComplete(data);
+	            String completionGesture = FacebookDialog.getNativeDialogCompletionGesture(data);
+	            String postId = FacebookDialog.getNativeDialogPostId(data);
+	        }
+	    });
 	}
 
 	@Override
@@ -143,12 +135,12 @@ public class ShareDialogActivity extends Activity {
 				FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
 				    // Publish the post using the Share Dialog
 				    FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
-				            .setLink(null)
+				            .setLink("https://developers.facebook.com/android")
 				            .build();
 				    uiHelper.trackPendingDialogCall(shareDialog.present());
 
 				} else {
-				    // Fallback. For example, publish the post using the Feed Dialog
+				    // Fallback. publish the post using the Feed Dialog
 				   publishFeedDialog();
 				}
 	}

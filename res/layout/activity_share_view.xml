@@ -18,12 +18,13 @@
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/buttonPostUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/editText1"
-        android:layout_marginTop="28dp"
-        android:text="Button" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:onClick="postUpdateClick"
+        android:text="@string/button_post_Update" />
 
 </RelativeLayout>

@@ -20,5 +20,8 @@
     <string name="button_share_with_view">Share with Custom View</string>
     <string name="title_activity_share_dialog">ShareDialogActivity</string>
     <string name="title_activity_share_view">ShareViewActivity</string>
+    <string name="button_timeline">Timeline</string>
+    <string name="title_activity_timeline">TimelineActivity</string>
+    <string name="button_post_Update">Update Status</string>
 
 </resources>

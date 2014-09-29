@@ -1,106 +1,121 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
-
-    <TextView
-        android:id="@+id/welcome"
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:text="@string/welcome" />
+        tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
-        android:id="@+id/labelUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/welcome"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/label_username" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/labelFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/labelUsername"
-        android:layout_below="@+id/labelUsername"
-        android:layout_marginTop="18dp"
-        android:text="@string/labelFirstName" />
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:text="@string/welcome" />
 
-    <TextView
-        android:id="@+id/textUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/labelFirstName"
-        android:layout_alignLeft="@+id/welcome" />
+            <TextView
+                android:id="@+id/labelUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/welcome"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/label_username" />
 
-    <TextView
-        android:id="@+id/textFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/labelFirstName"
-        android:layout_alignBottom="@+id/labelFirstName"
-        android:layout_alignLeft="@+id/textUsername" />
+            <TextView
+                android:id="@+id/labelFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/labelUsername"
+                android:layout_below="@+id/labelUsername"
+                android:layout_marginTop="18dp"
+                android:text="@string/labelFirstName" />
 
-    <TextView
-        android:id="@+id/labelLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/labelFirstName"
-        android:layout_below="@+id/textFirstName"
-        android:layout_marginTop="18dp"
-        android:text="@string/last_name" />
+            <TextView
+                android:id="@+id/textUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/labelFirstName"
+                android:layout_alignLeft="@+id/welcome" />
 
-    <TextView
-        android:id="@+id/labelGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/labelLastName"
-        android:layout_below="@+id/labelLastName"
-        android:layout_marginTop="18dp"
-        android:text="@string/label_gender" />
+            <TextView
+                android:id="@+id/textFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/labelFirstName"
+                android:layout_alignBottom="@+id/labelFirstName"
+                android:layout_alignLeft="@+id/textUsername" />
 
-    <TextView
-        android:id="@+id/labelBirthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/labelGender"
-        android:layout_below="@+id/labelGender"
-        android:layout_marginTop="18dp"
-        android:text="@string/label_birthday" />
+            <TextView
+                android:id="@+id/labelLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/labelFirstName"
+                android:layout_below="@+id/textFirstName"
+                android:layout_marginTop="18dp"
+                android:text="@string/last_name" />
 
-    <TextView
-        android:id="@+id/labelLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/labelBirthday"
-        android:layout_below="@+id/labelBirthday"
-        android:layout_marginTop="18dp"
-        android:text="@string/label_location" />
+            <TextView
+                android:id="@+id/labelGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/labelLastName"
+                android:layout_below="@+id/labelLastName"
+                android:layout_marginTop="18dp"
+                android:text="@string/label_gender" />
 
-    <Button
-        android:id="@+id/buttonShareDialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/labelLocation"
-        android:layout_marginTop="24dp"
-        android:onClick="shareDialogClick"
-        android:text="@string/button_share_with_dialog" />
+            <TextView
+                android:id="@+id/labelBirthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/labelGender"
+                android:layout_below="@+id/labelGender"
+                android:layout_marginTop="18dp"
+                android:text="@string/label_birthday" />
 
-    <Button
-        android:id="@+id/buttonShareView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/buttonShareDialog"
-        android:layout_marginTop="16dp"
-        android:onClick="shareViewClick"
-        android:text="@string/button_share_with_view" />
+            <TextView
+                android:id="@+id/labelLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/labelBirthday"
+                android:layout_below="@+id/labelBirthday"
+                android:layout_marginTop="18dp"
+                android:text="@string/label_location" />
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/buttonShareDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/labelLocation"
+                android:layout_marginTop="24dp"
+                android:onClick="shareDialogClick"
+                android:text="@string/button_share_with_dialog" />
+
+            <Button
+                android:id="@+id/buttonShareView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/buttonShareDialog"
+                android:layout_marginTop="16dp"
+                android:onClick="shareViewClick"
+                android:text="@string/button_share_with_view" />
+
+            <Button
+                android:id="@+id/buttonTimeline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/buttonShareView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="@string/button_timeline" />
+        </RelativeLayout>
+    </ScrollView>
