@@ -123,8 +123,8 @@ public class ShareViewActivity extends Activity {
 
 			Bundle postParams = new Bundle();
 			String textStatus = editStatus.getText().toString();
-			/*postParams.putString("message", textStatus);
-			postParams.putString("name", "Facebook SDK for Android");
+			postParams.putString("message", "test custom view");
+			/*postParams.putString("name", "Facebook SDK for Android");
 			postParams.putString("caption",
 					"Build great social apps and get more installs.");
 			postParams

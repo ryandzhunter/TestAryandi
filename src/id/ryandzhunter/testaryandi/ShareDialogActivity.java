@@ -76,7 +76,7 @@ public class ShareDialogActivity extends Activity {
 
 	private void publishFeedDialog() {
 		Bundle params = new Bundle();
-		params.putString("name", "Facebook SDK for Android");
+		/*params.putString("name", "Facebook SDK for Android");
 		params.putString("caption",
 				"Build great social apps and get more installs.");
 		params.putString(
@@ -84,7 +84,7 @@ public class ShareDialogActivity extends Activity {
 				"The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
 		params.putString("link", "https://developers.facebook.com/android");
 		params.putString("picture",
-				"https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
+				"https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");*/
 
 		WebDialog feedDialog = (new WebDialog.FeedDialogBuilder(this,
 				Session.getActiveSession(), params)).setOnCompleteListener(
