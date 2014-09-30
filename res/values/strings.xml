@@ -22,6 +22,7 @@
     <string name="title_activity_share_view">ShareViewActivity</string>
     <string name="button_timeline">Timeline</string>
     <string name="title_activity_timeline">TimelineActivity</string>
-    <string name="button_post_Update">Update Status</string>
+    <string name="button_post_update">Update Status</string>
+    <string name="status_update_hint">Type here</string>
 
 </resources>

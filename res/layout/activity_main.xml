@@ -116,6 +116,7 @@
                 android:layout_below="@+id/buttonShareView"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
+                android:onClick="timelineClick"
                 android:text="@string/button_timeline" />
         </RelativeLayout>
     </ScrollView>

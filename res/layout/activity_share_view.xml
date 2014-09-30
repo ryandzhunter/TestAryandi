@@ -12,6 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:ems="10"
+        android:hint="@string/status_update_hint"
         android:inputType="textMultiLine" >
 
         <requestFocus />
@@ -21,10 +22,10 @@
         android:id="@+id/buttonPostUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/editStatus"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="18dp"
         android:onClick="postUpdateClick"
-        android:text="@string/button_post_Update" />
+        android:text="@string/button_post_update" />
 
 </RelativeLayout>

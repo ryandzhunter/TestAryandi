@@ -11,6 +11,7 @@ import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
+import com.facebook.android.AsyncFacebookRunner;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.FacebookDialog;
 
@@ -65,6 +66,27 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -83,15 +105,8 @@ public class MainActivity extends Activity {
 		startActivity(shareViewIntent);	
 	}
 	
-    private FacebookDialog.Callback dialogCallback = new FacebookDialog.Callback() {
-        @Override
-        public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
-            Log.d("HelloFacebook", String.format("Error: %s", error.toString()));
-        }
-
-        @Override
-        public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
-            Log.d("HelloFacebook", "Success!");
-        }
-    };
+	public void timelineClick(View view){
+		Intent shareViewIntent = new Intent(getApplicationContext(), TimelineActivity.class);
+		startActivity(shareViewIntent);	
+	}
 }
