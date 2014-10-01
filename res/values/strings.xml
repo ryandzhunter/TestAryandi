@@ -24,5 +24,6 @@
     <string name="title_activity_timeline">TimelineActivity</string>
     <string name="button_post_update">Update Status</string>
     <string name="status_update_hint">Type here</string>
+    <string name="title_activity_timeline2">Timeline2Activity</string>
 
 </resources>

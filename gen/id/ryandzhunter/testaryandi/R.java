@@ -1542,6 +1542,7 @@ containing a value of this type.
         public static final int title_activity_share_dialog=0x7f0a0038;
         public static final int title_activity_share_view=0x7f0a0039;
         public static final int title_activity_timeline=0x7f0a003b;
+        public static final int title_activity_timeline2=0x7f0a003e;
         public static final int welcome=0x7f0a002e;
     }
     public static final class style {
