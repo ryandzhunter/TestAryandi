@@ -15,7 +15,7 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.LoginButton;
 
-public class MainFragment extends Fragment {
+public class LoginFragment extends Fragment {
 
 	private static final String TAG = "MainFragment";
 	private UiLifecycleHelper uiHelper;

@@ -1340,9 +1340,9 @@ containing a value of this type.
         public static final int labelUsername=0x7f050042;
         public static final int large=0x7f05001b;
         public static final int listMode=0x7f050001;
-        public static final int listView1=0x7f050050;
         public static final int list_item=0x7f05002b;
         public static final int login_button=0x7f05003f;
+        public static final int lvStatus=0x7f050050;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;

@@ -380,9 +380,9 @@ int id labelLocation 0x7f050049
 int id labelUsername 0x7f050042
 int id large 0x7f05001b
 int id listMode 0x7f050001
-int id listView1 0x7f050050
 int id list_item 0x7f05002b
 int id login_button 0x7f05003f
+int id lvStatus 0x7f050050
 int id middle 0x7f050012
 int id never 0x7f050009
 int id none 0x7f050010
