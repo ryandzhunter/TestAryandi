@@ -34,20 +34,20 @@ public class TimelineActivity extends Activity {
 		lvStatus = (ListView) findViewById(R.id.lvStatus);
 
 		Session session = Session.getActiveSession();
-		/*Session.NewPermissionsRequest newPermissionsRequest = new Session
+		Session.NewPermissionsRequest newPermissionsRequest = new Session
 			      .NewPermissionsRequest(this, Arrays.asList("public_profile", "user_status",
 							"read_stream"));
 			    List<String> permision = new ArrayList<String>();
 			    permision.add("user_status");
 			    permision.add("read_stream");
-				Session.openActiveSession(this, true,permision, callback);*/
-		if (!session.isOpened() && !session.isClosed()) {
+				Session.openActiveSession(this, true,permision, callback);
+		/*if (!session.isOpened() && !session.isClosed()) {
 			session.openForRead(new Session.OpenRequest(this).setPermissions(
 					Arrays.asList("public_profile", "user_status",
 							"read_stream")).setCallback(callback));
 		} else {
-			
-		}
+			Session.openActiveSession(this, true, callback);
+		}*/
 	}
 
 	private Session.StatusCallback callback = new Session.StatusCallback() {
@@ -56,8 +56,10 @@ public class TimelineActivity extends Activity {
 				Exception exception) {
 
 			if (session.isOpened()) {
+				Bundle params = new Bundle();
+				params.putString("access_token", session.getAccessToken());
 				/* make the API call */
-				new Request(session, "/v2.1/me/feed?fields=message", null,
+				new Request(session, "/v2.1/me/feed?fields=message", params,
 						HttpMethod.GET, new Request.Callback() {
 
 							public void onCompleted(Response response) {
